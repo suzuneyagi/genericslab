@@ -8,18 +8,29 @@ package edu.grinnell.csc207.genericslab;
 public class Optional<T> {
     private T val;
 
+    private Optional(){
+        //does notthing...?
+    }
 
     static <T> Optional<T> empty(){
-        return null;
+        Optional<T> emptyOp = new Optional();
+        return emptyOp;
     }
 
     static <T> Optional<T> of(T value){
-        Optional<T> optionalVal = new Optional<>();
-        optionalVal.val = value;
-        return optionalVal;
+        Optional<T> nonEmptyOp = new Optional();       
+        nonEmptyOp.val = value;
+        return nonEmptyOp;
     }
 
-    static boolean isEmpty(){
-        if(this.Optional<T>.val)
-    }
+    /*
+     * WE were not sure on how to get these function to work. We will ask about them in class.
+     */
+    // static boolean isEmpty(){
+    //     return (val != null)
+    // }
+    // static boolean isPresent(){}
+    // static T get(){}
+    // static T orElse(T other){}
+
 }

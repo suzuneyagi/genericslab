@@ -120,4 +120,11 @@ public class ArrayList<T>{
 
         return buf.toString();
     }
+
+    /**
+     * This method cannot be implemented because there is no way to "sort" the strings if type T is String.
+     */
+    public void insertionSort(){
+        throw new UnsupportedOperationException();
+    }
 }
