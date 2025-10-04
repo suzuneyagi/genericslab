@@ -91,4 +91,41 @@ public class ArrayListTests {
             l.remove(3);
         });
     }
+
+    @Test
+    public void intersperseNonEmpty(){
+        ArrayList<Integer> l = new ArrayList<>();
+        l.add(5);
+        l.add(6);
+        assertEquals(2, l.size());
+        l.intersperese(-1);
+        assertEquals(3, l.size());
+        assertEquals(5, l.get(0));
+        assertEquals(-1, l.get(1));
+        assertEquals(6, l.get(2));
+    }
+
+    @Test
+    public void intersperseOneEl(){
+        ArrayList<Integer> l = new ArrayList<>();
+        l.add(5);
+        l.intersperese(-1);
+        assertEquals(5, l.get(0));
+        assertEquals(1, l.size());
+    }
+
+    @Test
+    public void toStringEmpty(){
+        ArrayList<Integer> l = new ArrayList<>();
+        assertEquals("[]", l.toString());
+    }
+
+    @Test
+    public void toStringFull(){
+        ArrayList<String> l = new ArrayList<>();
+        l.add("Hi");
+        l.add("Hello");
+        l.add("Bye");
+        assertEquals("[Hi, Hello, Bye]", l.toString());
+    }
 }

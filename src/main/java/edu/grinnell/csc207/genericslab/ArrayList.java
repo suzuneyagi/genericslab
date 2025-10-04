@@ -84,8 +84,40 @@ public class ArrayList<T>{
             data[i] = copyOfData[i/2];
             data[i+1] = sep;
         }
+        
 
-        data[sz*2 - 1] = copyOfData[sz];
+        data[sz*2 - 2] = copyOfData[sz-1];
+        sz = (sz*2) - 1;
+    }
 
+    /**
+     * This method cannot be implemented because we don't know if the type T is 
+     * int. If T is String type, it cannot have a maximum value.
+     * @return UnsupportedOperationException()
+     */
+    public T maximum(){
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * String toString(): returns a string representation of the list in the form: [x1, x2, ..., xk]
+     *   where x1, x2, ..., xk are the elements of the list.
+     */
+    public String toString(){
+        StringBuilder buf = new StringBuilder();
+        buf.append("[");
+        if(sz < 1){
+            buf.append("]");
+        } else {
+            buf.append(data[0]);
+            for(int i = 1; i < sz; i++){
+                buf.append(", ");
+                buf.append(data[i]);
+            }
+
+            buf.append("]");
+        }
+
+        return buf.toString();
     }
 }
